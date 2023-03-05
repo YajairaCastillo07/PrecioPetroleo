@@ -1,0 +1,18 @@
+                                       # UNIBERDIDAD CENTRAL DEL ECUDAROR #
+                        # FACULTAD DE INGENIERIA EN GEOLOGIA, MINAS, PETROLEOS Y AMBIENTAL #
+                                            # CARRERA DE PETROLEOS #
+                                        # FACILIDADES DE PRODUCCIÓN #
+                                                # ESTUDIANTE #
+                                        # YAJAIRA BELÉN CASTILLO CAMACHO #
+
+import matplotlib.pyplot as plt #Librería para generar la gráfica
+import pandas as pd             #Libería para importar los datos de excel
+datos=pd.read_csv('DatospetróleoWTI.csv')   #Lee los datos
+fig2,ax=plt.subplots()                      #Genera la gráfica
+ax.plot(datos['Fecha'],datos['Último'],marker='o',color='tab:purple')  #Genera la gráfica con lOs valores deseados
+ax.plot(datos['Fecha'],datos['Apertura'],marker='*',color='tab:blue')
+ax.plot(datos['Fecha'],datos['Mínimo'],marker="^",color='tab:green')
+plt.title('Datos históricos del crudo WTI',fontsize=15,color='blue') #Genera el título de la gráfica
+plt.xlabel('Fecha',color='y') #Genera el título en el eje x de la gráfica
+plt.ylabel('Precio',color='g') #Genera el título en el eje y de la gráfica
+plt.legend(['Dato último', 'Apertura', 'Mínimo']) #Genera la leyenda de la gráfica
